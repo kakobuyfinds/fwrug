@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#153e35">
+  <title>JoyaGoo Spreadsheet Guide: Finds, Fit &amp; QC Checks</title>
+  <meta name="description" content="Explore the JoyaGoo spreadsheet workflow: browse categories, compare fit, understand QC photos and plan costs before opening product listings on CAFANS.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="JoyaGoo Spreadsheet — A More Considered Shortlist">
+  <meta property="og:description" content="A practical guide to product links, measurements, QC photos and total-cost checks. Browse categories on CAFANS.">
+  <meta property="og:image" content="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto%2Cq_auto%3Aeco/3cc96f43-47b6-43cb-951d-d8f73bb2f912/air-force-1-07-shoes-GjGXSP.png">
+  <meta property="og:image:alt" content="White Nike Air Force 1 '07 sneakers, shown as a footwear reference">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://static.nike.com" crossorigin>
+
+  <!--
+    File: index.html
+    The canonical uses this page's actual public URL when served over HTTP(S).
+    For deployment pipelines, the same URL can also be injected at build time.
+  -->
+  <script>
+    if (/^https?:$/.test(location.protocol)) {
+      const publicURL = new URL(location.pathname, location.origin).href;
+      const canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      canonical.href = publicURL;
+      document.head.appendChild(canonical);
+
+      const socialURL = document.createElement('meta');
+      socialURL.setAttribute('property', 'og:url');
+      socialURL.content = publicURL;
+      document.head.appendChild(socialURL);
+    }
+  </script>
+
+  <!--
+    Editorial keyword map.
+    Related phrases are research topics, not verified search-volume data.
+
+    Main:
+    JoyaGoo spreadsheet
+
+    Secondary:
+    JoyaGoo finds
+    JoyaGoo shopping guide
+    JoyaGoo QC photos
+    JoyaGoo product links
+    JoyaGoo size guide
+
+    Related topics (25):
+    beginner spreadsheet guide; sneaker size conversion;
+    shoe insole measurements; hoodie chest measurements;
+    T-shirt fabric weight; jacket shoulder width; pants inseam length;
+    cap circumference; jewelry clasp inspection; seller listing photos;
+    warehouse inspection images; source product ID; listing variant selection;
+    CNY to USD conversion; international parcel estimate;
+    volumetric shipping weight; domestic delivery charges;
+    payment processing costs; return eligibility window;
+    product link troubleshooting; parcel tracking updates;
+    color variation comparison; clothing measurement chart;
+    material composition labels; final order checklist.
+
+    Search-informed research, 2 November 2026.
+    Google first-page ordering could not be independently verified.
+    Ten relevant domains were reviewed through retrieved pages or indexed text.
+    Competitor product counts, promotional claims and testimonials were not adopted.
+
+    https://www.joyagoosheets.com/
+    Topics: category navigation, finds, QC and ordering guides.
+
+    https://joyagoospreadsheet.com/joyagoo-spreadsheet
+    Topics: product links, price context and frequently asked questions.
+
+    https://sheetjoyagoo.com/
+    Topics: category navigation and listing discovery.
+
+    https://joyagoo-us.com/
+    Topics: research, comparison and verification.
+
+    https://joyagoospreadsheet.gg/
+    Topics: category discovery and purchase walkthroughs.
+
+    https://joyagoochina.org/
+    Topics: source IDs, image search and measurement checks.
+
+    https://www.joyagoolist.com/
+    Indexed text only: finds and category navigation.
+
+    https://joyagoo.io/
+    Indexed text only: spreadsheet definitions and QC guidance.
+
+    https://joyagoo.today/
+    Topics: categories, shipping questions and beginner guides.
+
+    https://www.joyabuypromo.com/
+    Topics: category-first spreadsheet navigation.
+
+    Original adaptation:
+    Fit-first editorial structure, explicit outbound destinations,
+    concise answers, semantic sections and matching FAQ structured data.
+  -->
+
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f3ea;
+      --white: #fffefa;
+      --ink: #183c34;
+      --muted: #53645b;
+      --line: #d4d9c9;
+      --green: #153e35;
+      --lime: #dce6a2;
+      --soft: #e9ecdf;
+      --rust: #81452f;
+      --radius: 5px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-underline-offset: 4px;
+    }
+
+    a:focus-visible,
+    summary:focus-visible,
+    .table-scroll:focus-visible {
+      outline: 3px solid var(--rust);
+      outline-offset: 5px;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    h1, h2, h3, p, figure { margin: 0; }
+
+    h1, h2, h3 { line-height: 1.12; }
+
+    h1, h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      letter-spacing: -.045em;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5.6rem);
+      max-width: 760px;
+    }
+
+    h2 { font-size: clamp(2rem, 3.5vw, 3.1rem); }
+
+    h3 {
+      font-size: 1.12rem;
+      letter-spacing: -.02em;
+    }
+
+    p { max-width: 72ch; }
+
+    .wrap {
+      width: min(1180px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      font-size: .72rem;
+      font-weight: 750;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .muted { color: var(--muted); }
+
+    .topline { border-bottom: 1px solid var(--line); }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-block: 20px;
+    }
+
+    .wordmark {
+      font-size: 1rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-decoration: none;
+    }
+
+    .wordmark span {
+      display: block;
+      font-size: .63rem;
+      font-weight: 550;
+      letter-spacing: .2em;
+      margin-top: 1px;
+    }
+
+    .header-note {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-left: auto;
+    }
+
+    .header-cta {
+      font-size: .82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .directory {
+      padding-block: 22px 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .directory-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 12px;
+    }
+
+    .directory-label h2 {
+      font-family: inherit;
+      font-size: .72rem;
+      font-weight: 750;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .directory-label p {
+      font-size: .76rem;
+      color: var(--muted);
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .category-grid a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      min-height: 45px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      font-size: .79rem;
+      font-weight: 650;
+      text-decoration: none;
+      border-radius: var(--radius);
+    }
+
+    .category-grid a:hover {
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--white);
+    }
+
+    .category-grid span { opacity: .65; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding-block: 55px 60px;
+    }
+
+    .hero .eyebrow {
+      color: var(--rust);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: #587345;
+    }
+
+    .hero-copy {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      padding: 13px 20px;
+      background: var(--green);
+      color: var(--white);
+      border: 1px solid var(--green);
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: .88rem;
+      text-decoration: none;
+    }
+
+    .button:hover { background: #24574b; }
+
+    .small {
+      font-size: .76rem;
+      color: var(--muted);
+    }
+
+    .hero-note {
+      margin-top: 15px;
+      font-size: .76rem;
+      color: var(--muted);
+    }
+
+    .hero-art {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      padding: 16px;
+      border-radius: var(--radius);
+      transform: rotate(1deg);
+    }
+
+    .art-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: .65rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .hero-art img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      margin-block: 12px;
+      background: #f6f6f6;
+      border-radius: 2px;
+    }
+
+    .hero-art figcaption {
+      font-size: .76rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .answer {
+      display: grid;
+      grid-template-columns: .7fr 1.5fr;
+      gap: 45px;
+      background: var(--green);
+      color: var(--white);
+      padding: 34px;
+      border-radius: var(--radius);
+    }
+
+    .answer h2 {
+      font-size: 2rem;
+      margin-top: 9px;
+    }
+
+    .answer p { color: #e5ecdf; }
+    .answer strong { color: var(--lime); }
+
+    .answer .small {
+      color: #d3dfd2;
+      margin-top: 12px;
+    }
+
+    .section {
+      padding-block: 62px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 10px;
+      color: var(--rust);
+    }
+
+    .section-heading > p {
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .reference-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .reference {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .reference figure { background: #efefeb; }
+
+    .reference img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+    }
+
+    .reference figcaption {
+      padding: 9px 16px;
+      border-block: 1px solid var(--line);
+      font-size: .7rem;
+      color: var(--muted);
+    }
+
+    .reference-body { padding: 22px; }
+
+    .reference-body .eyebrow {
+      font-size: .62rem;
+      color: var(--rust);
+      margin-bottom: 10px;
+    }
+
+    .reference-body p {
+      font-size: .87rem;
+      color: var(--muted);
+      margin-top: 13px;
+    }
+
+    .reference-body a {
+      display: inline-block;
+      margin-top: 19px;
+      font-size: .8rem;
+      font-weight: 750;
+    }
+
+    .caption-note {
+      margin-top: 18px;
+      font-size: .76rem;
+      color: var(--muted);
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+      counter-reset: step;
+    }
+
+    .step {
+      counter-increment: step;
+      padding-top: 20px;
+      border-top: 2px solid var(--green);
+    }
+
+    .step::before {
+      content: "0" counter(step);
+      display: block;
+      font-family: Georgia, serif;
+      font-size: 2.2rem;
+      color: #668059;
+      margin-bottom: 15px;
+      line-height: 1;
+    }
+
+    .step p {
+      font-size: .9rem;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: .87rem;
+    }
+
+    caption {
+      text-align: left;
+      padding: 16px 20px;
+      background: var(--soft);
+      font-weight: 700;
+    }
+
+    th, td {
+      padding: 17px 20px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    thead th {
+      font-size: .68rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      background: #f3f4ec;
+    }
+
+    tbody th {
+      width: 20%;
+      font-weight: 750;
+    }
+
+    tbody td {
+      color: var(--muted);
+      width: 40%;
+    }
+
+    tbody tr:last-child > * { border-bottom: 0; }
+
+    .budget {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 50px;
+      margin-top: 35px;
+      align-items: start;
+    }
+
+    .budget h3 { margin-bottom: 12px; }
+
+    .budget p,
+    .budget li {
+      font-size: .88rem;
+      color: var(--muted);
+    }
+
+    .budget ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .budget li + li { margin-top: 8px; }
+
+    .formula {
+      background: var(--lime);
+      padding: 24px;
+      border-radius: var(--radius);
+    }
+
+    .formula p { color: var(--ink); }
+    .formula .eyebrow { margin-bottom: 10px; }
+
+    .formula strong {
+      display: block;
+      font-family: Georgia, serif;
+      font-size: 1.45rem;
+      line-height: 1.45;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: .7fr 1.5fr;
+      gap: 60px;
+    }
+
+    .faq-layout header .eyebrow {
+      color: var(--rust);
+      margin-bottom: 12px;
+    }
+
+    .faq-layout header p {
+      font-size: .88rem;
+      color: var(--muted);
+      margin-top: 18px;
+    }
+
+    details {
+      border-bottom: 1px solid var(--line);
+      padding: 18px 0;
+    }
+
+    details:first-child { border-top: 1px solid var(--line); }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: .95rem;
+      padding-right: 15px;
+    }
+
+    details p {
+      font-size: .9rem;
+      color: var(--muted);
+      margin-top: 12px;
+      padding-right: 20px;
+    }
+
+    .closing {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding-block: 44px;
+    }
+
+    .closing h2 { font-size: 2.4rem; }
+
+    .closing p {
+      font-size: .88rem;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    footer {
+      background: var(--soft);
+      border-top: 1px solid var(--line);
+      padding-block: 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: .65fr 1.5fr;
+      gap: 50px;
+    }
+
+    footer p {
+      font-size: .75rem;
+      color: var(--muted);
+    }
+
+    footer strong { color: var(--ink); }
+
+    @media (min-width: 1000px) {
+      .category-grid a {
+        transition: background-color .15s, color .15s;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero { gap: 26px; }
+
+      .category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .header-note { display: none; }
+      .reference-grid { gap: 14px; }
+      .reference-body { padding: 17px; }
+      .answer { gap: 25px; }
+      .faq-layout { gap: 30px; }
+    }
+
+    @media (max-width: 650px) {
+      .wrap { width: calc(100% - 32px); }
+      .header { padding-block: 16px; }
+      .wordmark { font-size: .86rem; }
+      .header-cta { font-size: .74rem; }
+      .directory { padding-block: 18px; }
+
+      .directory-label {
+        align-items: start;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+      }
+
+      .category-grid a {
+        font-size: .75rem;
+        padding: 9px;
+        min-height: 44px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-block: 34px 38px;
+        gap: 30px;
+      }
+
+      .hero h1 { max-width: 550px; }
+
+      .hero-art {
+        transform: none;
+        max-width: 460px;
+        width: 100%;
+        margin-inline: auto;
+      }
+
+      .hero-art img { max-height: 380px; }
+      .hero-copy { font-size: .98rem; }
+
+      .answer {
+        grid-template-columns: 1fr;
+        padding: 25px;
+        gap: 20px;
+      }
+
+      .section { padding-block: 40px; }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .reference-grid { grid-template-columns: 1fr; }
+
+      .reference {
+        display: grid;
+        grid-template-columns: .9fr 1.1fr;
+      }
+
+      .reference figure {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .reference img {
+        flex: 1;
+        min-height: 170px;
+        object-fit: contain;
+      }
+
+      .reference figcaption {
+        font-size: .63rem;
+        padding: 8px;
+      }
+
+      .reference-body h3 { font-size: 1rem; }
+      .reference-body p { font-size: .79rem; }
+      .reference-body .eyebrow { letter-spacing: .07em; }
+
+      .workflow {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: 45px 1fr;
+        gap: 6px 16px;
+      }
+
+      .step::before {
+        grid-row: span 2;
+        margin-top: 2px;
+      }
+
+      .step p { margin-top: 4px; }
+
+      .budget,
+      .faq-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      th, td {
+        padding: 14px 12px;
+        font-size: .79rem;
+      }
+
+      .table-scroll table { min-width: 550px; }
+
+      .closing {
+        align-items: start;
+        flex-direction: column;
+        padding-block: 34px;
+        gap: 22px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .caption-note { font-size: .71rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "#webpage",
+        "name": "JoyaGoo Spreadsheet Guide: Finds, Fit & QC Checks",
+        "description": "An independent guide to spreadsheet research, product measurements, QC photos and total-cost checks, with category links to CAFANS.",
+        "inLanguage": "en",
+        "about": {
+          "@type": "Thing",
+          "name": "JoyaGoo spreadsheet"
+        },
+        "hasPart": {
+          "@id": "#questions"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "#questions",
+        "inLanguage": "en",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a JoyaGoo spreadsheet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A JoyaGoo spreadsheet is a reference list used to organize product links and compare details before ordering through a shopping agent. A useful entry records the source listing, chosen variant, measurements and date checked. This page explains the workflow and links to CAFANS categories; it does not provide a live spreadsheet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where do this page's shopping links go?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Category links open the named category on cafans.com. All other shopping links open www.cafans.com. They do not open a JoyaGoo cart, and a pictured item is not a promise of a matching CAFANS listing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are seller photos the same as JoyaGoo QC photos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Seller listing photos illustrate a listing; warehouse inspection images should document the item received for your order. Check that any QC images match your order, size and color. Photos alone cannot establish authenticity, exact materials or long-term durability."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How should I compare sizes across listings?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use a clothing measurement chart or model-specific shoe measurements, then compare them with an item that already fits you. Match the measurement method and units. Size letters and regional shoe numbers alone are not enough, and missing measurements should be clarified before ordering."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does a spreadsheet price include international shipping?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Do not assume it does. Check the item price, domestic delivery charges, service and payment costs, international shipping and any applicable import charges separately. Confirm current amounts with the seller, agent and carrier before payment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What should I do when a product link stops working?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For product link troubleshooting, compare the source product ID with your saved entry and check whether the listing or variant has changed. Do not assume a similar photo identifies the same item. If the listing is unavailable or the destination looks wrong, pause and verify before paying."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this an official JoyaGoo or brand website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. This is an independent informational page with outbound links to CAFANS. It is not operated by or affiliated with JoyaGoo, Nike, Louis Vuitton, Gucci or Hermès. Brand images are visual references, not authentication evidence, stock confirmation or endorsements."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/fwrug/">
+</head>
+
+<body>
+  <div class="topline">
+    <header class="header wrap">
+      <a class="wordmark" href="https://www.cafans.com" aria-label="The Find Notes — visit CAFANS">
+        THE FIND NOTES
+        <span>AN INDEPENDENT SHOPPING FIELD GUIDE</span>
+      </a>
+      <p class="header-note">Less guesswork. A better shortlist.</p>
+      <a class="header-cta" href="https://www.cafans.com">
+        Explore CAFANS <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+  </div>
+
+  <main class="wrap">
+    <nav class="directory" aria-label="Browse CAFANS product categories">
+      <div class="directory-label">
+        <h2>Start with a category</h2>
+        <p>These links open the corresponding CAFANS category.</p>
+      </div>
+
+      <div class="category-grid">
+        <a href="https://cafans.com/category-911-Shoes.html">
+          Shoes <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://cafans.com/category-912-Hoodies%2FSweaters.html">
+          Hoodies/Sweaters <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://cafans.com/category-913-T-Shirts.html">
+          T-Shirts <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://cafans.com/category-914-Jackets.html">
+          Jackets <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://cafans.com/category-915-Pants%2FShorts.html">
+          Pants/Shorts <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://cafans.com/category-916-Headwear.html">
+          Headwear <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://cafans.com/category-917-Sets.html">
+          Sets <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://cafans.com/category-918-underwear%2Funderpants.html">
+          Underwear/underpants <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://cafans.com/category-919-Jersey.html">
+          Jersey <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://cafans.com/category-920-Accessories.html">
+          Accessories <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </nav>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">The considered shortlist / English edition</p>
+        <h1 id="page-title">
+          JoyaGoo spreadsheet.<br>
+          <em>Find your fit first.</em>
+        </h1>
+        <p class="hero-copy">
+          A good find starts with a clear listing, the right measurements and a cost
+          you understand. Use this independent guide to compare footwear, clothing
+          and accessories before building your shortlist.
+        </p>
+        <div class="actions">
+          <a class="button" href="https://www.cafans.com">
+            Browse on CAFANS <span aria-hidden="true">↗</span>
+          </a>
+          <span class="small">Read the checks. Then open a listing.</span>
+        </div>
+        <p class="hero-note">
+          An editorial guide, not a live product sheet or ordering service.
+        </p>
+      </div>
+
+      <figure class="hero-art">
+        <div class="art-label">
+          <span>Field reference / 01</span>
+          <span>Footwear</span>
+        </div>
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto%2Cq_auto%3Aeco/3cc96f43-47b6-43cb-951d-d8f73bb2f912/air-force-1-07-shoes-GjGXSP.png"
+          width="640"
+          height="640"
+          alt="White Nike Air Force 1 '07 sneakers with white laces and a low-top profile"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async">
+        <figcaption>
+          <span>Nike Air Force 1 '07</span>
+          <span>Visual reference only</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="answer" aria-labelledby="quick-answer">
+      <div>
+        <p class="eyebrow">The quick answer</p>
+        <h2 id="quick-answer">What is the sheet actually for?</h2>
+      </div>
+      <div>
+        <p>
+          A <strong>JoyaGoo spreadsheet</strong> is a reference list for organizing
+          product links and comparing information before ordering through a
+          shopping agent. Treat each row as a starting point: confirm the source,
+          variant, measurements and current costs on the destination listing.
+        </p>
+        <p class="small">
+          This beginner spreadsheet guide focuses on the checks behind a useful
+          shortlist. Shopping links on this page lead to CAFANS, not directly to
+          JoyaGoo.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="reference-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 / Look closer</p>
+          <h2 id="reference-title">A photograph starts<br>the comparison.</h2>
+        </div>
+        <p>
+          When browsing JoyaGoo finds, separate the style you like from the details
+          you still need. These brand photographs illustrate three different
+          things to inspect.
+        </p>
+      </div>
+
+      <div class="reference-grid">
+        <article class="reference">
+          <figure>
+            <img
+              src="https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1716359414/788093_XJGTO_9799_001_100_0000_Light-embroidered-cotton-jersey-t-shirt.jpg"
+              width="490"
+              height="490"
+              alt="White Gucci crewneck T-shirt with a small embroidered chest logo"
+              loading="lazy"
+              decoding="async">
+            <figcaption>Gucci / clothing reference</figcaption>
+          </figure>
+          <div class="reference-body">
+            <p class="eyebrow">The fabric check</p>
+            <h3>Look past the front print.</h3>
+            <p>
+              Ask about T-shirt fabric weight and read material composition labels.
+              Neither thickness nor fiber content can be confirmed from a distant
+              photograph.
+            </p>
+            <a href="https://cafans.com/category-913-T-Shirts.html">
+              Browse CAFANS T-Shirts <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="reference">
+          <figure>
+            <img
+              src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-surplus-cotton-cap--M5718M_PM2_Front%20view.jpg"
+              width="600"
+              height="600"
+              alt="Louis Vuitton Monogram Surplus cotton cap, front view"
+              loading="lazy"
+              decoding="async">
+            <figcaption>Louis Vuitton / headwear reference</figcaption>
+          </figure>
+          <div class="reference-body">
+            <p class="eyebrow">The proportion check</p>
+            <h3>A cap has more than a size.</h3>
+            <p>
+              Compare cap circumference, crown height and the adjustment range.
+              For color variation comparison, use images taken under similar light.
+            </p>
+            <a href="https://cafans.com/category-916-Headwear.html">
+              Browse CAFANS Headwear <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="reference">
+          <figure>
+            <img
+              src="https://assets.hermes.com/is/image/hermesproduct/700001FP01_front_wm_101?%24product_default_bg%24="
+              width="600"
+              height="600"
+              alt="Hermès Clic H bracelet with black enamel and silver-tone hardware"
+              loading="lazy"
+              decoding="async">
+            <figcaption>Hermès / jewelry reference</figcaption>
+          </figure>
+          <div class="reference-body">
+            <p class="eyebrow">The detail check</p>
+            <h3>Small pieces need close views.</h3>
+            <p>
+              Request dimensions and clear hardware photos. Jewelry clasp
+              inspection can reveal visible closure issues; it does not establish
+              metal composition or authenticity.
+            </p>
+            <a href="https://cafans.com/category-920-Accessories.html">
+              Browse CAFANS Accessories <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <p class="caption-note">
+        Brand photography is used for visual reference. These images do not confirm
+        CAFANS inventory, seller quality, authenticity or any brand relationship.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="workflow-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">02 / A practical method</p>
+          <h2 id="workflow-title">Three passes.<br>One clearer decision.</h2>
+        </div>
+        <p>
+          This JoyaGoo shopping guide begins before checkout. Record what you know,
+          identify what is missing and resolve the gaps before committing.
+        </p>
+      </div>
+
+      <div class="workflow">
+        <article class="step">
+          <h3>Save the exact source.</h3>
+          <p>
+            For JoyaGoo product links, record the source product ID and the date
+            checked. Finish listing variant selection before comparing: a different
+            color, material or size may change the offer.
+          </p>
+        </article>
+        <article class="step">
+          <h3>Compare the evidence.</h3>
+          <p>
+            Distinguish seller listing photos from warehouse inspection images.
+            For JoyaGoo QC photos, match the order and variant, then examine
+            labels, dimensions and visible condition.
+          </p>
+        </article>
+        <article class="step">
+          <h3>Check the whole order.</h3>
+          <p>
+            Use a final order checklist: item, size, color, costs, delivery address
+            and return eligibility window. Save the order reference for later
+            parcel tracking updates.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="fit-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">03 / The measurement desk</p>
+          <h2 id="fit-title">Compare numbers,<br>not size letters.</h2>
+        </div>
+        <p>
+          Build your own JoyaGoo size guide around an item that already fits.
+          Compare like-for-like measurements and keep units consistent.
+        </p>
+      </div>
+
+      <div class="table-scroll" role="region" aria-label="Scrollable product measurement checklist" tabindex="0">
+        <table>
+          <caption>What to check before saving a find</caption>
+          <thead>
+            <tr>
+              <th scope="col">Category</th>
+              <th scope="col">Useful comparison</th>
+              <th scope="col">Resolve before ordering</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Shoes</th>
+              <td>
+                Use sneaker size conversion as a starting point, then check shoe
+                insole measurements for the specific model.
+              </td>
+              <td>
+                Confirm the listed size system and whether a measurement
+                describes the foot, insole or outsole.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Hoodies &amp; sweaters</th>
+              <td>
+                Compare hoodie chest measurements, body length and sleeve
+                length with a garment laid flat.
+              </td>
+              <td>
+                Check whether the chart gives a flat chest width or a full
+                chest circumference.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Jackets &amp; sets</th>
+              <td>
+                Compare jacket shoulder width and room for your usual layers.
+                Measure both pieces of a set separately.
+              </td>
+              <td>
+                Ask how dropped shoulders or raglan sleeves are measured;
+                a single shoulder number can mislead.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Pants &amp; shorts</th>
+              <td>
+                Check pants inseam length, waist and rise against a pair you
+                wear comfortably.
+              </td>
+              <td>
+                Confirm whether an elastic waist is measured relaxed or stretched.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">T-shirts &amp; jerseys</th>
+              <td>
+                Use a clothing measurement chart for chest, length and sleeves;
+                compare the intended silhouette.
+              </td>
+              <td>
+                Clarify the measurement method and any stated manufacturing tolerance.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Underwear</th>
+              <td>
+                Compare the waistband range and fabric stretch using your own
+                measurements.
+              </td>
+              <td>
+                Check hygiene-related return restrictions before opening or
+                trying on an item.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="budget">
+        <div>
+          <h3>The number beside the item is only the start.</h3>
+          <ul>
+            <li>
+              For CNY to USD conversion, record the rate used and check the amount
+              actually charged by your payment provider.
+            </li>
+            <li>
+              An international parcel estimate depends on the destination, service
+              and billable weight. Ask how volumetric shipping weight is calculated.
+            </li>
+            <li>
+              Check domestic delivery charges and payment processing costs
+              separately; neither should be assumed to be included.
+            </li>
+          </ul>
+        </div>
+
+        <aside class="formula" aria-label="Total cost planning">
+          <p class="eyebrow">Budget by components</p>
+          <strong>
+            Item + delivery + service costs<br>
+            + payment costs + import charges
+          </strong>
+          <p>
+            Include domestic and international delivery where applicable.
+            Confirm current amounts and any optional charges before payment.
+            This guide does not quote live prices or shipping rates.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section faq-layout" aria-labelledby="faq-title">
+      <header>
+        <p class="eyebrow">04 / Direct answers</p>
+        <h2 id="faq-title">Before you<br>open a listing.</h2>
+        <p>
+          Short answers to the questions that matter when comparing links,
+          photos, fit and costs.
+        </p>
+      </header>
+
+      <div id="questions">
+        <details open>
+          <summary>What is a JoyaGoo spreadsheet?</summary>
+          <p>A JoyaGoo spreadsheet is a reference list used to organize product links and compare details before ordering through a shopping agent. A useful entry records the source listing, chosen variant, measurements and date checked. This page explains the workflow and links to CAFANS categories; it does not provide a live spreadsheet.</p>
+        </details>
+
+        <details>
+          <summary>Where do this page's shopping links go?</summary>
+          <p>Category links open the named category on cafans.com. All other shopping links open www.cafans.com. They do not open a JoyaGoo cart, and a pictured item is not a promise of a matching CAFANS listing.</p>
+        </details>
+
+        <details>
+          <summary>Are seller photos the same as JoyaGoo QC photos?</summary>
+          <p>No. Seller listing photos illustrate a listing; warehouse inspection images should document the item received for your order. Check that any QC images match your order, size and color. Photos alone cannot establish authenticity, exact materials or long-term durability.</p>
+        </details>
+
+        <details>
+          <summary>How should I compare sizes across listings?</summary>
+          <p>Use a clothing measurement chart or model-specific shoe measurements, then compare them with an item that already fits you. Match the measurement method and units. Size letters and regional shoe numbers alone are not enough, and missing measurements should be clarified before ordering.</p>
+        </details>
+
+        <details>
+          <summary>Does a spreadsheet price include international shipping?</summary>
+          <p>Do not assume it does. Check the item price, domestic delivery charges, service and payment costs, international shipping and any applicable import charges separately. Confirm current amounts with the seller, agent and carrier before payment.</p>
+        </details>
+
+        <details>
+          <summary>What should I do when a product link stops working?</summary>
+          <p>For product link troubleshooting, compare the source product ID with your saved entry and check whether the listing or variant has changed. Do not assume a similar photo identifies the same item. If the listing is unavailable or the destination looks wrong, pause and verify before paying.</p>
+        </details>
+
+        <details>
+          <summary>Is this an official JoyaGoo or brand website?</summary>
+          <p>No. This is an independent informational page with outbound links to CAFANS. It is not operated by or affiliated with JoyaGoo, Nike, Louis Vuitton, Gucci or Hermès. Brand images are visual references, not authentication evidence, stock confirmation or endorsements.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <div>
+        <h2 id="closing-title">Keep the shortlist considered.</h2>
+        <p>
+          Start with a category. Save the source. Check the details that matter to you.
+        </p>
+      </div>
+      <a class="button" href="https://www.cafans.com">
+        Continue to CAFANS <span aria-hidden="true">↗</span>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <p>
+          <strong>THE FIND NOTES</strong><br>
+          Independent JoyaGoo spreadsheet guide<br>
+          English edition
+        </p>
+      </div>
+      <p>
+        This page provides general product-research guidance and outbound links
+        to CAFANS. It does not sell products, process orders or verify sellers.
+        Brand names identify the visual examples only. Confirm current listing
+        details, availability, costs and policies at the destination before ordering.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
